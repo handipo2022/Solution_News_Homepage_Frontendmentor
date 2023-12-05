@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: InterBold;
+        src: url("./assets/fonts/static/Inter-Bold.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: InterExtraBold;
+        src: url("./assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: InterRegular;
+        src: url("./assets/fonts/static/Inter-Regular.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: InterVariable;
+        src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+          format("truetype");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main-container {
+        width: 1200px;
+        height: 800px;
+        padding: 5px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        margin-top: 10px;
+      }
+      .navbar-top {
+        width: 100%;
+        height: 50px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      ul {
+        font-family: InterVariable;
+        font-size: 15px;
+        display: inline-flex;
+        list-style-type: none;
+      }
+      a {
+        color: hsl(236, 13%, 42%);
+        text-decoration: none;
+      }
+      a:hover {
+        cursor: pointer;
+        color: hsl(5, 85%, 63%);
+      }
+      li {
+        margin: 0 20px 0;
+      }
+      .container-1st-row {
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-top: 20px;
+      }
+      .container-2nd-row {
+        width: 100%;
+        height: 200px;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        margin-top: 60px;
+      }
+      h1 {
+        color: hsl(35, 77%, 62%);
+        font-family: InterBold;
+        margin-top: 30px;
+        margin-left: 20px;
+      }
+      h4 {
+        color: white;
+        font-family: InterRegular;
+        margin-top: 30px;
+        margin-left: 20px;
+      }
+
+      .article-menu p {
+        font-family: InterVariable;
+        color: hsl(236, 13%, 42%);
+        font-size: 15px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 290px;
+      }
+      hr {
+        border: none;
+        border-bottom: 1px hsl(233, 8%, 79%) solid;
+        width: 280px;
+        margin-left: 20px;
+        opacity: 0.5;
+      }
+      .main-img {
+        width: 790px;
+        height: 285px;
+      }
+      .container-img {
+        width: 790px;
+        height: 500px;
+      }
+      .article-menu {
+        background-color: black;
+        width: 340px;
+        height: 500px;
+      }
+      .textmenu:hover,
+      .textmenu:active {
+        cursor: pointer;
+        color: hsl(5, 85%, 63%);
+      }
+      .textarticle {
+        color: hsl(236, 13%, 42%);
+        font-family: InterVariable;
+        font-size: 16px;
+      }
+      .thumbnail-img {
+        width: 100px;
+        height: 140px;
+      }
+      .thumbnail-number {
+        font-size: 25px;
+        color: hsl(236, 13%, 42%);
+        font-family: InterBold;
+        margin-left: 40px;
+      }
+      .thumbnail-article {
+        color: hsl(236, 13%, 42%);
+        font-family: InterVariable;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-left: 40px;
+        margin-right: 30px;
+        width: 230px;
+      }
+      .thumbnail-title {
+        font-size: 17px;
+        font-family: InterBold;
+        color: hsl(240, 100%, 5%);
+        margin-top: 10px;
+        margin-left: 40px;
+      }
+      .thumbnail-title:hover,
+      .thumbnail-title:active {
+        cursor: pointer;
+        color: hsl(5, 85%, 63%);
+      }
+      .button-readmore {
+        background-color: hsl(5, 85%, 63%);
+        color: white;
+        font-family: InterBold;
+        font-weight: 400;
+        font-size: 10px;
+        letter-spacing: 5px;
+        width: 150px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin-top: 35px;
+      }
+      .button-readmore:hover,
+      .button-readmore:active {
+        cursor: pointer;
+        background-color: hsl(240, 100%, 5%);
+      }
+      .main-article {
+        width: 790px;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 80px;
+        margin-top: 30px;
+      }
+
+      .title-article {
+        font-family: InterExtraBold;
+        font-weight: 700;
+        font-size: 55px;
+        line-height: 55px;
+        width: 300px;
+      }
+      .content-article {
+        font-family: InterVariable;
+        color: hsl(236, 13%, 42%);
+        font-size: 15px;
+        width: 350px;
+        line-height: 25px;
+      }
+      .text-p {
+        font-family: InterVariable;
+        color: hsl(233, 8%, 79%);
+        font-size: 15px;
+      }
+      .separator {
+        border: none;
+        border-bottom: 1px hsl(233, 8%, 79%) solid;
+      }
+      .hamburger-menu {
+        display: none;
+        margin-top:auto;
+        margin-bottom:auto;
+      }
+      .hamburger-menu-expand {
+        display: grid;
+        grid-template-rows: repeat(10, 1fr);
+        width: 200px;
+        height: 500px;
+        margin-left: 180px;
+        background-color: white;
+        color: black;
+        margin-top: -70px;
+        z-index: 1;
+        padding-top: 30px;
+        border: 0.5px solid black;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media screen and (max-width: 1200px) {
+        .main-container {
+          scale: 0.95;
+        }
+        
+      }
+      @media screen and (max-width: 1090px) {
+        .main-container {
+          scale: 0.9;
+        }
+        
+      }
+      @media screen and (max-width: 964px) {
+        .main-container {
+          scale: 0.85;
+        }
+        
+      }
+      @media screen and (max-width: 834px) {
+        .main-container {
+          scale: 0.8;
+        }
+        
+      }
+      @media screen and (max-width: 724px) {
+        .main-container {
+          scale: 0.75;
+        }
+        
+      }
+      @media screen and (max-width: 595px) {
+        .main-container {
+          scale: 0.7;
+        }
+        
+      }
+      @media screen and (max-width: 480px) {
+        .main-container {
+          scale: 0.65;
+        }
+        
+      }
+      @media screen and (max-width: 400px) {
+        .main-container {
+          width: 375px;
+          height: 900px;
+        }
+        .content-article {
+          width: 400px;
+        }
+        .main-img {
+          width: 340px;
+          height: 340px;
+          content: url("./assets/images/image-web-3-mobile.jpg");
+        }
+        .title-article {
+          width: 375px;
+          font-size: 45px;
+        }
+        .container-1st-row {
+          width: 100%;
+          height: fit-content;
+          grid-template-columns: 1fr;
+          margin-top: 20px;
+        }
+        .container-2nd-row {
+          width: 340px;
+          height: fit-content;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 2px;
+          row-gap: 30px;
+        }
+        .main-article {
+          width: 100%;
+          height: fit-content;
+          margin-top: 20px;
+          grid-template-columns: 1fr;
+        }
+        .content-article {
+          margin-top: 20px;
+          width: 350px;
+        }
+        .button-readmore {
+          width: 170px;
+          height: 40px;
+          margin-top: 20px;
+        }
+        .article-menu {
+          margin-top: 250px;
+        }
+        .thumbnail-article {
+          grid-template-columns: 1fr;
+        }
+        .thumbnail-section {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        .hamburger-menu {
+          display: block;
+          margin-left: 250px;
+        }
+        ul{
+          display: none;
+        }
+        .attribution{
+          margin-top:20px;
+        }
+      }
+    </style>
+    <script>
+      function openMenu() {
+        let menu = document.getElementById("menunavbar");
+        menu.classList.remove("ul");
+        menu.classList.add("hamburger-menu-expand");
+        let closeIcon = document.getElementById("closeicon");
+        closeIcon.style.display = "block";
+        let navbartop = document.getElementById("navbartop");
+        navbartop.style.width = "80px";
+        navbartop.style.gridTemplateColumns = "1fr";
+      }
+      function closeMenu() {
+        let menu = document.getElementById("menunavbar");
+        menu.classList.remove("hamburger-menu-expand");
+        menu.classList.add("ul");
+        let closeIcon = document.getElementById("closeicon");
+        closeIcon.style.display = "none";
+        let navbartop = document.getElementById("navbartop");
+        navbartop.style.width = "100%";
+
+        navbartop.style.gridTemplateColumns = "repeat(5,1fr)";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main-container"">
+    <!-- navigation bar container -->
+    <div id="navbartop" class="navbar-top">
+      <img id="logo" style="align-items:baseline;" src="./assets/images/logo.svg" />
+      <img
+        id="hamburgermenu"
+        class="hamburger-menu"
+        onclick="openMenu()"
+        src="./assets/images/icon-menu.svg"
+      />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menunavbar">
+        <img
+          id="closeicon"
+          style="display: none;margin-left:150px;"
+          src="./assets/images/icon-menu-close.svg"
+          onclick="closeMenu()"
+        />
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">New</a>
+        </li>
+        <li>
+          <a href="#">Popular</a>
+        </li>
+        <li>
+          <a href="#">Trending</a>
+        </li>
+        <li>
+          <a href="#">Categories</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 1st row content -->
+    <div class="container-1st-row">
+      <div class="container-img">
+        <img class="main-img" src="./assets/images/image-web-3-desktop.jpg" />
+        <div class="main-article">
+          <p class="title-article">The Bright Future of Web 3.0?</p>
+          <div>
+            <p class="content-article">
+              We dive into the next evolution of the web that claims to put the
+              power of the platforms back into the hands of the people. But is
+              it really fulfilling its promise?
+            </p>
+            <button type="button" class="button-readmore">READ MORE</button>
+          </div>
+        </div>
+      </div>
+      <span></span>
+      <span></span>
+
+      <div class="article-menu">
+        <h1>New</h1>
+        <h4>Hydrogen VS Electric Cars</h4>
+        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        <hr />
+        <h4>The Downsides of AI Artistry</h4>
+        <p>
+          What are the possible adverse effects of on-demand AI image
+          generation?
+        </p>
+        <hr />
+        <h4>Is VC Funding Drying Up?</h4>
+        <p>
+          Private funding by VC firms is down 50% YOY. We take a look at what
+          that means.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2nd row content -->
+    <div class="container-2nd-row">
+      <img class="thumbnail-img" src="./assets/images/image-retro-pcs.jpg" />
+      <div>
+        <p class="thumbnail-number">01</p>
+        <p class="thumbnail-title">Reviving Retro PCs</p>
+        <p class="thumbnail-article">
+          What happens when old PCs are given modern upgrades?
+        </p>
+      </div>
+      <img class="thumbnail-img" src="./assets/images/image-top-laptops.jpg" />
+      <div>
+        <p class="thumbnail-number">02</p>
+        <p class="thumbnail-title">Top 10 Laptops of 2022</p>
+        <p class="thumbnail-article">
+          Our best picks for various needs and budgets.
+        </p>
+      </div>
+      <img
+        class="thumbnail-img"
+        src="./assets/images/image-gaming-growth.jpg"
+      />
+      <div>
+        <p class="thumbnail-number">03</p>
+        <p class="thumbnail-title">The Growth of Gaming</p>
+        <p class="thumbnail-article">
+          How the pandemic has sparked fresh opportunities.
+        </p>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Zhou Han Bao @Dec-2023</a>.
+    </div>
+  </body>
+</html>

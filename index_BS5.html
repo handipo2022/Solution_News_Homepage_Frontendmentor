@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @font-face {
+        font-family: InterBold;
+        src: url("./assets/fonts/static/Inter-Bold.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: InterExtraBold;
+        src: url("./assets/fonts/static/Inter-ExtraBold.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: InterRegular;
+        src: url("./assets/fonts/static/Inter-Regular.ttf") format("truetype");
+      }
+      @font-face {
+        font-family: InterVariable;
+        src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+          format("truetype");
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .main-container {
+        width: 2000px;
+        height: 1000px;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      .textmenu {        
+        color: hsl(236, 13%, 42%);
+        font-family: InterVariable;
+        font-size: 16px;
+      }
+      .textmenu:hover,.textmenu:active{
+        cursor:pointer;
+        color:hsl(5, 85%, 63%);
+      }
+      .textarticle{
+        color: hsl(236, 13%, 42%);
+        font-family: InterVariable;
+        font-size: 16px;
+      }
+      .thumbnail-article{
+        color: hsl(236, 13%, 42%);
+        font-family: InterVariable;
+        font-size: 16px;
+      }
+      .thumbnail-title{
+        font-size:18px;
+        font-family:InterBold;
+        color: hsl(240, 100%, 5%);
+      }
+      .thumbnail-title:hover,.thumbnail-title:active{
+        cursor:pointer;
+        color:hsl(5, 85%, 63%);
+      }
+      .custom-button {
+        background-color: hsl(5, 85%, 63%);
+        color: white;
+        font-family: InterBold;
+        font-weight: 400;
+        font-size: 10px;
+        letter-spacing: 5px;
+        width: 150px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+      }
+      .custom-button:hover,.custom-button:active{
+        cursor:pointer;
+        background-color: hsl(240, 100%, 5%);
+
+      }
+      .titlearticle {
+        color: hsl(36, 100%, 99%);
+        font-family: InterBold;
+      }
+      .text-p {
+        font-family: InterVariable;
+        color: hsl(233, 8%, 79%);
+        font-size: 15px;
+      }
+      .separator {
+        border: none;
+        border-bottom: 1px hsl(233, 8%, 79%) solid;
+      }
+      .img-article {
+        width: 100px;
+        height: 130px;
+      }
+      .div-section {
+        background-color: red;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid pt-3" style="width: 1440px">
+      <!-- navigation bar container -->
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="./assets/images/logo.svg"
+          /></a>
+          <ul class="navbar-nav gap-5">
+            <li class="nav-item">
+              <a class="nav-link textmenu" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link textmenu" href="#">New</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link textmenu" href="#">Popular</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link textmenu" href="#">Trending</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link textmenu" href="#">Categories</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- 1st row content -->
+      <div class="row pt-5 gap-4">
+        <div class="col-md-8">
+          <img
+            class="row"
+            style="height: 300px; width: 920px"
+            src="./assets/images/image-web-3-desktop.jpg"
+          />
+          <div class="row">
+            <p
+              class="col-md-4 mt-4"
+              style="
+                font-family: InterExtraBold;
+                font-weight: 700;
+                font-size: 50px;
+                line-height: 50px;
+              "
+            >
+              The Bright Future of Web 3.0?
+            </p>
+            <span class="col-md-2 mt-4"></span>
+            <div class="col-md-5 mt-4">
+              <p class="row textarticle" style="width: 370px; height: fit-content">
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <button type="button" class="row custom-button mt-5">
+                READ MORE
+              </button>
+            </div>
+            <span class="col-md-1 mt-4"></span>
+          </div>
+        </div>
+
+        <div class="col-md-3 bg-dark" style="width: 420px; height: 500px">
+          <h2
+            class="h2 pt-4"
+            style="color: hsl(35, 77%, 62%); font-family: InterBold"
+          >
+            New
+          </h2>
+          <h5 class="h5 titlearticle pt-4">Hydrogen VS Electric Cars</h5>
+          <p class="text-p pt-2">
+            Will hydrogen-fueled cars ever catch up to EVs?
+          </p>
+          <hr class="separator pt-1" />
+          <h5 class="h5 titlearticle pt-4">The Downsides of AI Artistry</h5>
+          <p class="text-p pt-2">
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+          <hr class="separator pt-1" />
+          <h5 class="h5 titlearticle pt-4">Is VC Funding Drying Up?</h5>
+          <p class="text-p pt-2">
+            Private funding by VC firms is down 50% YOY. We take a look at what
+            that means.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2nd row content -->
+      <div class="row mt-5">
+        <div class="col">
+          <div class="row">
+            <img
+              class="col-md-3 img-article"
+              src="./assets/images/image-retro-pcs.jpg"
+            />
+            <div class="col-md-7" style="line-height:25px;">
+              <p class="mt-1"style="font-size:30px;font-family:InterExtraBold;color: hsl(236, 13%, 42%);">01</p>
+              <p class="thumbnail-title mt-2">Reviving Retro PCs</p>
+              <p class="thumbnail-article mt-2" >What happens when old PCs are given modern upgrades?</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <img
+              class="col-md-3 img-article"
+              src="./assets/images/image-top-laptops.jpg"
+            />
+            <div class="col-md-7"  style="line-height:25px;">
+              <p class="mt-1"style="font-size:30px;font-family:InterExtraBold;color: hsl(236, 13%, 42%);">02</p>
+              <p class="thumbnail-title mt-2">Top 10 Laptops of 2022</p>
+              <p class="thumbnail-article mt-2" >Our best picks for various needs and budgets.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <img
+            class="col-md-3 img-article"
+            src="./assets/images/image-gaming-growth.jpg"
+          />
+           <div class="col-md-7"   style="line-height:25px;">
+              <p class="mt-1"style="font-size:30px;font-family:InterExtraBold;color: hsl(236, 13%, 42%);">03</p>
+              <p class="thumbnail-title mt-2">The Growth of Gaming</p>
+              <p class="thumbnail-article mt-2" >How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   
+    <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Zhou Han Bao @Dec-2023</a>.
+  </div>
+  </body>
+</html>
